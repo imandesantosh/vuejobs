@@ -13,7 +13,7 @@ export default defineConfig({
         target: 'https://restapi-znr9.onrender.com',
         changeOrigin: true,
         secure: false,
-        //rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, options) => {
         proxy.on('proxyReq', (proxyReq, req, res) => {
         console.log('Sending Request to:', options.target + proxyReq.path);
